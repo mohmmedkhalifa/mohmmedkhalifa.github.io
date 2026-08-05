@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>محمد خليفة | مهندس برمجيات</title>
+
+  <meta
+    name="description"
+    content="البورتفوليو الشخصي لمحمد خليفة، مهندس برمجيات ومختص بالذكاء الاصطناعي."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f5f7fb;
+      color: #1e293b;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* شريط التنقل */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    /* القسم الرئيسي */
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(
+          circle at top right,
+          #1d4ed8,
+          #0f172a 55%
+        );
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 100px 0;
+    }
+
+    .hello {
+      display: inline-block;
+      padding: 7px 17px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      color: #7dd3fc;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 20px;
+      color: #cbd5e1;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button-primary {
+      color: #0f172a;
+      background: #38bdf8;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-3px);
+      background: #7dd3fc;
+    }
+
+    .button-secondary {
+      color: white;
+      border: 1px solid #64748b;
+    }
+
+    .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* الأقسام */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      margin-bottom: 45px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #64748b;
+    }
+
+    /* عني */
+
+    .about-box {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 45px;
+      align-items: center;
+      padding: 40px;
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+    }
+
+    .profile {
+      width: 190px;
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      border-radius: 50%;
+      color: white;
+      font-size: 65px;
+      font-weight: bold;
+      background: linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4
+      );
+    }
+
+    .about-text h3 {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #475569;
+      margin-bottom: 18px;
+    }
+
+    /* المهارات */
+
+    .skills {
+      background: #eaf1fb;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
+    }
+
+    .skill {
+      padding: 24px 15px;
+      text-align: center;
+      background: white;
+      border-radius: 15px;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-6px);
+    }
+
+    /* المشاريع */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      overflow: hidden;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    .project-image {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 55px;
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #06b6d4
+        );
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .project-content p {
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    /* التواصل */
+
+    .contact {
+      color: white;
+      background: #0f172a;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact .section-title p {
+      color: #94a3b8;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px;
+      text-align: center;
+      background: #172033;
+      border-radius: 22px;
+    }
+
+    .contact-box p {
+      margin-bottom: 25px;
+      color: #cbd5e1;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .contact-link {
+      padding: 12px 22px;
+      color: white;
+      border: 1px solid #475569;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .contact-link:hover {
+      color: #0f172a;
+      background: #38bdf8;
+      border-color: #38bdf8;
+    }
+
+    /* التذييل */
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: #94a3b8;
+      background: #080d18;
+    }
+
+    /* الجوال */
+
+    @media (max-width: 700px) {
+
+      .navbar {
+        padding: 15px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .about-box {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        text-align: center;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .section-title h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- القائمة -->
+
+  <nav>
+    <div class="container navbar">
+
+      <a href="#home" class="logo">
+        محمد<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li>
+          <a href="#home">الرئيسية</a>
+        </li>
+
+        <li>
+          <a href="#about">عني</a>
+        </li>
+
+        <li>
+          <a href="#skills">المهارات</a>
+        </li>
+
+        <li>
+          <a href="#projects">المشاريع</a>
+        </li>
+
+        <li>
+          <a href="#contact">تواصل</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- الصفحة الرئيسية -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <span class="hello">
+            مرحبًا، أنا
+          </span>
+
+          <h1>
+            محمد <span>خليفة</span>
+          </h1>
+
+          <p>
+            مهندس برمجيات ومختص بالذكاء الاصطناعي،
+            أعمل على تطوير تطبيقات ومواقع وحلول تقنية
+            عملية تجمع بين التصميم الجيد والتقنيات الحديثة.
+          </p>
+
+          <div class="buttons">
+
+            <a
+              href="#projects"
+              class="button button-primary"
+            >
+              مشاهدة مشاريعي
+            </a>
+
+            <a
+              href="#contact"
+              class="button button-secondary"
+            >
+              تواصل معي
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- عني -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>من أنا؟</h2>
+
+          <p>
+            نبذة مختصرة عن خبرتي واهتماماتي
+          </p>
+
+        </div>
+
+        <div class="about-box">
+
+          <div class="profile">
+            م
+          </div>
+
+          <div class="about-text">
+
+            <h3>
+              مهندس برمجيات ومطور حلول تقنية
+            </h3>
+
+            <p>
+              أنا محمد خليفة، مهندس برمجيات مهتم
+              بتطوير تطبيقات الويب والموبايل،
+              والذكاء الاصطناعي، وبناء أنظمة
+              تساعد على حل المشكلات بطريقة عملية.
+            </p>
+
+            <p>
+              أمتلك خبرة واهتمامًا في تطوير
+              التطبيقات باستخدام Flutter،
+              والعمل مع قواعد البيانات،
+              وتصميم واجهات المستخدم،
+              واستخدام أدوات وتقنيات حديثة.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- المهارات -->
+
+    <section class="skills" id="skills">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>المهارات التقنية</h2>
+
+          <p>
+            التقنيات والأدوات التي أعمل بها
+          </p>
+
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill">
+            Flutter
+          </div>
+
+          <div class="skill">
+            Dart
+          </div>
+
+          <div class="skill">
+            Python
+          </div>
+
+          <div class="skill">
+            HTML
+          </div>
+
+          <div class="skill">
+            CSS
+          </div>
+
+          <div class="skill">
+            JavaScript
+          </div>
+
+          <div class="skill">
+            Git
+          </div>
+
+          <div class="skill">
+            GitHub
+          </div>
+
+          <div class="skill">
+            قواعد البيانات
+          </div>
+
+          <div class="skill">
+            الذكاء الاصطناعي
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- المشاريع -->
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>مشاريعي</h2>
+
+          <p>
+            مجموعة من المشاريع التي عملت عليها
+          </p>
+
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project">
+
+            <div class="project-image">
+              💊
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                نظام إدارة صيدلية
+              </h3>
+
+              <p>
+                نظام لإدارة الأدوية والمخزون
+                والمبيعات وتنظيم بيانات الصيدلية.
+              </p>
+
+              <a
+                href="#"
+                class="project-link"
+              >
+                مشاهدة المشروع ←
+              </a>
+
+            </div>
+
+          </article>
+
+          <article class="project">
+
+            <div class="project-image">
+              📱
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                تطبيق خدمات
+              </h3>
+
+              <p>
+                تطبيق يساعد المستخدمين على
+                الوصول إلى الخدمات وتنظيم الطلبات.
+              </p>
+
+              <a
+                href="#"
+                class="project-link"
+              >
+                مشاهدة المشروع ←
+              </a>
+
+            </div>
+
+          </article>
+
+          <article class="project">
+
+            <div class="project-image">
+              🤖
+            </div>
+
+            <div class="project-content">
+
+              <h3>
+                مشروع ذكاء اصطناعي
+              </h3>
+
+              <p>
+                مشروع يستخدم تقنيات الذكاء
+                الاصطناعي لتحليل البيانات
+                وتقديم نتائج مفيدة.
+              </p>
+
+              <a
+                href="#"
+                class="project-link"
+              >
+                مشاهدة المشروع ←
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- التواصل -->
+
+    <section class="contact" id="contact">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>تواصل معي</h2>
+
+          <p>
+            يسعدني التواصل والعمل على مشاريع جديدة
+          </p>
+
+        </div>
+
+        <div class="contact-box">
+
+          <p>
+            يمكنك التواصل معي عبر GitHub
+            أو البريد الإلكتروني.
+          </p>
+
+          <div class="contact-links">
+
+            <a
+              class="contact-link"
+              href="https://github.com/mohammedkhalifa"
+              target="_blank"
+            >
+              GitHub
+            </a>
+
+            <a
+              class="contact-link"
+              href="mailto:moh.k.khalifa0@gmail.com"
+            >
+              البريد الإلكتروني
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- التذييل -->
+
+  <footer>
+
+    <p>
+      © 2026 محمد خليفة — جميع الحقوق محفوظة
+    </p>
+
+  </footer>
+
+</body>
+  </html>
